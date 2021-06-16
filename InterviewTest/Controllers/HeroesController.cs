@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 
 namespace InterviewTest.Controllers
@@ -37,13 +33,22 @@ namespace InterviewTest.Controllers
         [HttpGet("{id}", Name = "Get")]
         public Hero Get(int id)
         {
-            return this.heroes.FirstOrDefault();
+            return this.heroes[id];
         }
 
         // POST: api/Heroes
         [HttpPost]
         public void Post([FromBody] string value)
         {
+            // If the value is not empty and it is equal to evolve
+             if (value != "")
+                if (value == "evolve")
+                {
+                    for (int x = 0; x < heroes.Length; x++)
+                    {
+                        heroes[x].evolve();
+                    }
+                }
         }
 
         // PUT: api/Heroes/5
