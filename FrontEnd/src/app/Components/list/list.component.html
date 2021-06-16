@@ -1,0 +1,20 @@
+<table>
+    <thead>
+        <th>Name</th>
+        <th>Power</th>
+        <th>Stat (Strenght)</th>
+        <th>Stat (Intelligence)</th>
+        <th>Stat (Stamina)</th>
+        <th>Evolve</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let hero of heros">
+            <td>{{hero.name}}</td>
+            <td>{{hero.power}}</td>
+            <td>{{hero.stats[0].Value}}</td>
+            <td>{{hero.stats[1].Value}}</td>
+            <td>{{hero.stats[2].Value}}</td>
+            <td><button>Evolve</button></td>
+        </tr>
+    </tbody>
+</table>
